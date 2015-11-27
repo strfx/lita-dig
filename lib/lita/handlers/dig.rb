@@ -30,6 +30,9 @@ module Lita
         short    = response.match_data['short']
         result   = lookup(record, type, resolver)
 
+        resolver.use_tcp = true
+
+
         response.reply(format_lookup(result, short))
       end
 
